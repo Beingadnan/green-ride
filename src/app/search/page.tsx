@@ -47,11 +47,6 @@ function SearchContent() {
   }, [trips, loading]);
 
   const handleBookNow = (tripId: string) => {
-    if (!user) {
-      const next = `/booking/${tripId}`;
-      router.push(`/auth/login?next=${encodeURIComponent(next)}`);
-      return;
-    }
     router.push(`/booking/${tripId}`);
   };
 

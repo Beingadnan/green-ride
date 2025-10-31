@@ -26,8 +26,8 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // Protected user routes
-  const protectedPrefixes = ["/user", "/booking", "/checkout", "/timing"];
+  // Protected user routes (booking is public; login required only at payment)
+  const protectedPrefixes = ["/user", "/checkout", "/timing"];
   const isProtectedRoute = protectedPrefixes.some((prefix) =>
     pathname.startsWith(prefix)
   );

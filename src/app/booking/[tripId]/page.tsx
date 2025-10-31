@@ -39,13 +39,8 @@ export default function BookingPage() {
 
   useEffect(() => {
     if (authLoading) return;
-    if (!user) {
-      const next = `/booking/${tripId}`;
-      router.push(`/auth/login?next=${encodeURIComponent(next)}`);
-      return;
-    }
     fetchTrip();
-  }, [tripId, user, authLoading]);
+  }, [tripId, authLoading]);
 
   const fetchTrip = async () => {
     const result = await getTripById(tripId);
@@ -73,6 +68,13 @@ export default function BookingPage() {
   const handlePayment = async (passengerDetails: PassengerDetails) => {
     try {
       setProcessingPayment(true);
+
+      // Require login only at payment step
+      if (!user) {
+        const next = `/booking/${tripId}`;
+        router.push(`/auth/login?next=${encodeURIComponent(next)}`);
+        return;
+      }
 
       // Create booking
       const bookingResult = await createBooking({
@@ -137,10 +139,6 @@ export default function BookingPage() {
   };
 
   if (authLoading) {
-    return null;
-  }
-
-  if (!user) {
     return null;
   }
 
