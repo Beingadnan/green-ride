@@ -1,0 +1,53 @@
+{
+  "name": "greenride-express",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "make-admin": "tsx scripts/makeAdmin.ts"
+  },
+  "dependencies": {
+    "@sendgrid/mail": "^8.1.0",
+    "axios": "^1.6.2",
+    "bcryptjs": "^2.4.3",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.0.0",
+    "date-fns": "^2.30.0",
+    "framer-motion": "^12.23.24",
+    "jsonwebtoken": "^9.0.2",
+    "jspdf": "^2.5.1",
+    "libphonenumber-js": "^1.12.25",
+    "lucide-react": "^0.469.0",
+    "mongoose": "^8.0.0",
+    "next": "16.0.1",
+    "nodemailer": "^6.9.7",
+    "qrcode": "^1.5.3",
+    "rate-limiter-flexible": "^8.1.0",
+    "razorpay": "^2.9.2",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "react-hot-toast": "^2.6.0",
+    "tailwind-merge": "^2.1.0",
+    "zod": "^4.1.12",
+    "zustand": "^4.4.7"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/jsonwebtoken": "^9.0.5",
+    "@types/node": "^20",
+    "@types/nodemailer": "^6.4.14",
+    "@types/qrcode": "^1.5.5",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "dotenv": "^16.3.1",
+    "eslint": "^9",
+    "eslint-config-next": "16.0.1",
+    "tailwindcss": "^4",
+    "tsx": "^4.7.0",
+    "typescript": "^5"
+  }
+}
